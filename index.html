@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gonzalo Nahuel Leiba - CV</title>
+    
+    <!-- LIBRERÍA DE ÍCONOS (Son como calcomanías para adornar la página) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- ==========================================
+         AQUÍ EMPIEZA EL CSS (LA PINTURA Y DECORACIÓN)
+         ========================================== -->
+    <style>
+        /* Reglas generales para que todo se vea prolijo */
+        :root {
+            --color-principal: #1A365D; /* Azul oscuro, da confianza */
+            --color-secundario: #2B6CB0; /* Azul más clarito para botones */
+            --color-fondo: #F7FAFC; /* Un gris/celeste muuuy clarito, casi blanco */
+            --color-texto: #2D3748; /* Gris oscuro para las letras */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--color-fondo);
+            color: var(--color-texto);
+            line-height: 1.6;
+        }
+
+        /* El contenedor principal */
+        .contenedor {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        /* 1. HEADER (La parte de arriba con tu foto) */
+        .header {
+            display: flex;
+            position: relative;
+            background-color: #EBF8FF;
+            overflow: hidden;
+            border-bottom: 4px solid var(--color-principal);
+        }
+
+        .foto-container {
+            width: 40%;
+            position: relative;
+        }
+
+        .foto-perfil {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
+    mask-image: linear-gradient(to right, black 85%, transparent 100%);
+        }
+
+        .header-texto {
+            width: 60%;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .header-texto h1 {
+            color: var(--color-principal);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .header-texto h2 {
+            color: #4A5568;
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .botones-contacto {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .boton {
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .boton-pdf { background-color: var(--color-principal); }
+        .boton-pdf:hover { background-color: #0F2039; }
+
+        .boton-wsp { background-color: #25D366; }
+        .boton-wsp:hover { background-color: #1EBE55; }
+
+        .boton-email { background-color: var(--color-secundario); }
+        .boton-email:hover { background-color: #1A4971; }
+
+        /* 2. SECCIONES GENERALES */
+        .seccion {
+            padding: 40px;
+            border-bottom: 1px solid #E2E8F0;
+        }
+
+        .titulo-seccion {
+            color: var(--color-principal);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .texto-perfil {
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+
+        /* 3. EXPERIENCIA LABORAL */
+        .experiencia-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .item-experiencia {
+            display: flex;
+            gap: 20px;
+            background: var(--color-fondo);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid var(--color-secundario);
+        }
+
+        .logo-empresa {
+            width: 60px;
+            height: 60px;
+            background-color: white;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--color-principal);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-decoration: none;
+            transition: transform 0.2s;
+            flex-shrink: 0;
+        }
+
+        .logo-empresa:hover {
+            transform: scale(1.1);
+        }
+
+        /* Agregamos esta regla para que las imágenes de los logos encajen perfecto */
+        .logo-empresa img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Hace que la imagen no se deforme */
+            padding: 4px; /* Un margencito para que no toque los bordes */
+            border-radius: 10px;
+        }
+
+        .info-experiencia h3 {
+            color: var(--color-principal);
+            margin-bottom: 5px;
+        }
+
+        .fecha-experiencia {
+            color: #718096;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        /* 4. FORMACIÓN Y ESTUDIOS */
+        .formacion-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .item-formacion {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid var(--color-principal);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .item-formacion h4 {
+            color: var(--color-principal);
+            margin-bottom: 15px;
+            border-bottom: 2px solid #EBF8FF;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .item-formacion ul {
+            list-style: none;
+        }
+
+        .item-formacion li {
+            margin-bottom: 15px;
+        }
+
+        .item-formacion li:last-child {
+            margin-bottom: 0;
+        }
+
+        .titulo-estudio {
+            font-weight: bold;
+            color: var(--color-texto);
+        }
+
+        .lugar-fecha {
+            font-size: 0.9rem;
+            color: #718096;
+        }
+
+        /* 5. HABILIDADES */
+        .habilidades-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .columna-habilidad {
+            flex: 1;
+            background: #EBF8FF;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .columna-habilidad h4 {
+            color: var(--color-principal);
+            border-bottom: 2px solid var(--color-secundario);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .columna-habilidad ul {
+            list-style: none;
+        }
+
+        .columna-habilidad li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .columna-habilidad li i {
+            color: var(--color-secundario);
+        }
+
+        /* Modo Celular (Para que se vea bien en pantallas chiquitas) */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+            }
+            .foto-container, .header-texto {
+                width: 100%;
+            }
+            .foto-container {
+                height: 300px;
+            }
+            .foto-perfil {
+                -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+                mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+            }
+            .header-texto {
+                padding: 20px;
+                text-align: center;
+            }
+            .botones-contacto {
+                justify-content: center;
+            }
+            .item-experiencia {
+                flex-direction: column;
+            }
+            .formacion-grid {
+                grid-template-columns: 1fr;
+            }
+            .habilidades-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+
+        <!-- 1. HEADER -->
+        <header class="header">
+            <div class="foto-container">
+                <!-- Cuando tengas tu foto, reemplazamos este enlace -->
+                <img src="mi-foto.jpg" alt="Gonzalo Nahuel Leiba" class="foto-perfil">
+            </div>
+            <div class="header-texto">
+                <h1>Gonzalo Nahuel Leiba</h1>
+                <h2>Administrativo con experiencia en facturación, cuentas corrientes y gestión operativa.</h2>
+                <p style="margin-bottom: 20px; color: #4A5568;"><i class="fas fa-map-marker-alt"></i> Rosario, Santa Fe (Zona Centro)</p>
+                
+                <div class="botones-contacto">
+                    <!-- BOTÓN DE DESCARGA: Busca el archivo que vas a guardar en la carpeta -->
+                    <a href="CV_Gonzalo_Leiba.pdf" download="CV_Gonzalo_Leiba.pdf" class="boton boton-pdf">
+                        <i class="fas fa-file-pdf"></i> Descargar CV
+                    </a>
+                    
+                    <a href="https://wa.me/5493413584047?text=Hola%20Gonzalo,%20vimos%20tu%20CV%20en%20tu%20sitio%20web%20y%20queremos%20contactarte." target="_blank" class="boton boton-wsp">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                    
+                    <a href="mailto:gonzalonahuelleiba@yahoo.com.ar" class="boton boton-email">
+                        <i class="fas fa-envelope"></i> Email
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- 2. PERFIL PROFESIONAL -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">Perfil Profesional</h2>
+            <p class="texto-perfil">
+                Administrativo con experiencia en facturación, cuentas corrientes y gestión operativa. Trabajé en distintos rubros realizando control de documentación, carga de datos, contacto con proveedores y seguimiento de tareas. Me adapto rápidamente a nuevos sistemas y procesos. Actualmente me encuentro en formación para seguir fortaleciendo mis habilidades administrativas.
+            </p>
+        </section>
+
+        <!-- 3. EXPERIENCIA LABORAL -->
+        <section class="seccion" style="background-color: #F8FAFC;">
+            <h2 class="titulo-seccion">Experiencia Laboral</h2>
+            
+            <div class="experiencia-grid">
+                
+                <div class="item-experiencia">
+                    <a href="https://www.uber.com/" target="_blank" class="logo-empresa" title="Ir a la web de Uber">
+                        <!-- Busca la imagen Uber.png en tu carpeta -->
+                        <img src="Uber.png" alt="Trabajo en Uber">
+                    </a>
+                    <div class="info-experiencia">
+                        <h3>Gestión Operativa Independiente</h3>
+                        <p class="fecha-experiencia">Administrativo | Oct 2024 - Actualidad</p>
+                        <p>Durante este período combiné tareas administrativas y operativas. Tres días a la semana colaboré en un minimarket (emprendimiento familiar), realizando control de mercadería, carga de datos en Excel, contacto con proveedores y atención al público. El resto del tiempo trabajé en plataformas de movilidad en Rosario, organizando mi actividad de forma autónoma y manteniendo trato con clientes. En paralelo, continúo formándome en herramientas administrativas.</p>
+                    </div>
+                </div>
+
+                <div class="item-experiencia">
+                    <a href="https://www.sadaic.org.ar/" target="_blank" class="logo-empresa" title="Ir a la web de SADAIC">
+                        <!-- Busca la imagen SAdaic.png en tu carpeta -->
+                        <img src="SAdaic.png" alt="Logo SADAIC">
+                    </a>
+                    <div class="info-experiencia">
+                        <h3>SADAIC</h3>
+                        <p class="fecha-experiencia">Administrativo - Facturación | 2024</p>
+                        <p>Puesto eventual por cobertura de licencia por maternidad. Me desempeñé en tareas de facturación, administración de cuentas corrientes, registro de recibos manuales en sistema y elaboración de informes de reclamos para gerencia. Fue una experiencia corta, pero con buen nivel de responsabilidad y adaptación rápida al puesto.</p>
+                    </div>
+                </div>
+
+                <div class="item-experiencia">
+                    <a href="https://droguerianuevaera.com.ar/" target="_blank" class="logo-empresa" title="Ir a la web de Nueva Era">
+                        <!-- Busca la imagen Nueva Era.png en tu carpeta -->
+                        <img src="Nueva Era.png" alt="Logo Nueva Era">
+                    </a>
+                    <div class="info-experiencia">
+                        <h3>Droguería Nueva Era</h3>
+                        <p class="fecha-experiencia">Administrativo - Facturación | 2021 - 2023</p>
+                        <p>Realicé tareas administrativas vinculadas a facturación, control de documentación y carga de datos en sistemas. Participé en el seguimiento de operaciones, gestión de comprobantes y organización de información. Además, colaboré con distintas áreas para asegurar el correcto flujo administrativo y el cumplimiento de procesos internos.</p>
+                    </div>
+                </div>
+
+                <div class="item-experiencia">
+                    <a href="https://www.miceli.com.ar/" target="_blank" class="logo-empresa" title="Ir a la web de Miceli">
+                        <!-- Busca la imagen miceli.png en tu carpeta -->
+                        <img src="miceli.png" alt="Logo Miceli">
+                    </a>
+                    <div class="info-experiencia">
+                        <h3>Miceli Maderas SRL</h3>
+                        <p class="fecha-experiencia">Analista de Cuentas Corrientes | 2020 - 2021</p>
+                        <p>Gestión de cuentas corrientes, seguimiento de cobranzas y control de operaciones comerciales. Análisis de crédito, alta de clientes y verificación de datos. Coordinación con el área comercial para el seguimiento de ventas y control de documentación, manteniendo orden y actualización constante de la información.</p>
+                    </div>
+                </div>
+
+                <div class="item-experiencia">
+                    <a href="https://www.tradelog.com.ar/" target="_blank" class="logo-empresa" title="Ir a la web de Tradelog">
+                        <!-- Busca la imagen tradelog.png en tu carpeta -->
+                        <img src="tradelog.png" alt="Logo Tradelog">
+                    </a>
+                    <div class="info-experiencia">
+                        <h3>Tradelog</h3>
+                        <p class="fecha-experiencia">Administración y Facturación | 2018 - 2020</p>
+                        <p>Tareas administrativas vinculadas a operaciones logísticas y facturación. Seguimiento de servicios, control de documentación y carga de datos. Coordinación con clientes y proveedores para asegurar el correcto desarrollo de las operaciones y mantener actualizada la información del área.</p>
+                    </div>
+                </div>
+
+                <div class="item-experiencia">
+                    <a href="http://www.grupoestisol.com/" target="_blank" class="logo-empresa" title="Ir a la web de Novapol">
+                        <!-- Busca la imagen Novapol.png en tu carpeta -->
+                        <img src="Novapol.png" alt="Logo Novapol">
+                    </a>
+                    <div class="info-experiencia">
+                        <h3>Novapol S.A.</h3>
+                        <p class="fecha-experiencia">Operaciones y Logística | 2015 - 2018</p>
+                        <p>Control de recepción de mercadería y organización de stock en planta. Coordinación de ingresos de transporte y seguimiento de operaciones. Elaboración de reportes diarios y participación en la planificación de abastecimiento, colaborando con distintas áreas para asegurar el flujo de producción.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 4. FORMACIÓN Y ESTUDIOS -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">Formación y Estudios</h2>
+            
+            <div class="formacion-grid">
+                <!-- Columna Estudios -->
+                <div class="item-formacion">
+                    <h4><i class="fas fa-graduation-cap"></i> Mis Estudios</h4>
+                    <ul>
+                        <li>
+                            <div class="titulo-estudio">Técnico en Programación</div>
+                            <div class="lugar-fecha">UTN | Feb 2022 - Nov 2023</div>
+                        </li>
+                        <li>
+                            <div class="titulo-estudio">Técnico en Comercialización (Marketing)</div>
+                            <div class="lugar-fecha">TEC Rosario | Mar 2016 - Mar 2021</div>
+                        </li>
+                        <li>
+                            <div class="titulo-estudio">Contador Público</div>
+                            <div class="lugar-fecha">UNOBA | Feb 2007 - Ene 2008</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Columna Cursos -->
+                <div class="item-formacion">
+                    <h4><i class="fas fa-certificate"></i> Cursos y Actualización</h4>
+                    <ul>
+                        <li>
+                            <div class="titulo-estudio">Excel aplicado a administración</div>
+                            <div class="lugar-fecha"><i class="fas fa-sync fa-spin" style="font-size: 0.8rem;"></i> En curso</div>
+                        </li>
+                        <li>
+                            <div class="titulo-estudio">Introducción a herramientas digitales</div>
+                            <div class="lugar-fecha"><i class="fas fa-sync fa-spin" style="font-size: 0.8rem;"></i> En curso</div>
+                        </li>
+                        <li>
+                            <div class="titulo-estudio">Procesos administrativos</div>
+                            <div class="lugar-fecha">Formación autodidacta</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. HABILIDADES -->
+        <section class="seccion" style="background-color: #F8FAFC;">
+            <h2 class="titulo-seccion">Habilidades</h2>
+            
+            <div class="habilidades-container">
+                <div class="columna-habilidad">
+                    <h4><i class="fas fa-folder-open"></i> Administrativas</h4>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Facturación</li>
+                        <li><i class="fas fa-check-circle"></i> Cuentas corrientes</li>
+                        <li><i class="fas fa-check-circle"></i> Gestión de pagos</li>
+                        <li><i class="fas fa-check-circle"></i> Conciliaciones</li>
+                    </ul>
+                </div>
+
+                <div class="columna-habilidad">
+                    <h4><i class="fas fa-laptop"></i> Herramientas</h4>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Excel (Intermedio)</li>
+                        <li><i class="fas fa-check-circle"></i> Sistemas ERP</li>
+                        <li><i class="fas fa-check-circle"></i> Power BI (Básico)</li>
+                        <li><i class="fas fa-check-circle"></i> Inglés (Intermedio)</li>
+                    </ul>
+                </div>
+
+                <div class="columna-habilidad">
+                    <h4><i class="fas fa-user-tie"></i> Personales</h4>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Organización</li>
+                        <li><i class="fas fa-check-circle"></i> Responsabilidad</li>
+                        <li><i class="fas fa-check-circle"></i> Trabajo en equipo</li>
+                        <li><i class="fas fa-check-circle"></i> Resolución de problemas</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>
