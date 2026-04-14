@@ -273,6 +273,56 @@
             color: var(--color-secundario);
         }
 
+        /* 6. PROYECTOS (Estilo SaaS) */
+        .proyectos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .tarjeta-proyecto {
+            background: white;
+            border: 1px solid #E2E8F0;
+            border-radius: 10px;
+            padding: 25px 20px;
+            text-decoration: none;
+            color: var(--color-texto);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 12px;
+        }
+
+        .tarjeta-proyecto:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border-color: var(--color-secundario);
+        }
+
+        .tarjeta-proyecto i {
+            font-size: 2.2rem;
+            color: var(--color-principal);
+            margin-bottom: 5px;
+        }
+
+        .tarjeta-proyecto h4 {
+            color: var(--color-principal);
+            font-size: 1.1rem;
+        }
+
+        .link-texto {
+            margin-top: auto;
+            font-size: 0.85rem;
+            color: var(--color-secundario);
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
         /* Modo Celular (Para que se vea bien en pantallas chiquitas) */
         @media (max-width: 768px) {
             .header {
@@ -344,7 +394,7 @@
         <section class="seccion">
             <h2 class="titulo-seccion">Perfil Profesional</h2>
             <p class="texto-perfil">
-                Administrativo con experiencia en facturación, cuentas corrientes y gestión operativa. Trabajé en distintos rubros realizando control de documentación, carga de datos, contacto con proveedores y seguimiento de tareas. Me adapto rápidamente a nuevos sistemas y procesos. Actualmente me encuentro en formación para seguir fortaleciendo mis habilidades administrativas.
+                Administrativo con experiencia en facturación, cuentas corrientes y tareas operativas. Me destaco por ser ordenado, resolutivo y por adaptarme rápido a distintos entornos de trabajo. Utilizo herramientas digitales e inteligencia artificial para organizar tareas y encontrar soluciones prácticas en el día a día. Tengo experiencia en control de datos, seguimiento de operaciones y trato con clientes y proveedores.
             </p>
         </section>
 
@@ -360,9 +410,9 @@
                         <img src="Uber.png" alt="Trabajo en Uber">
                     </a>
                     <div class="info-experiencia">
-                        <h3>Gestión Operativa Independiente</h3>
-                        <p class="fecha-experiencia">Administrativo | Oct 2024 - Actualidad</p>
-                        <p>Durante este período combiné tareas administrativas y operativas. Tres días a la semana colaboré en un minimarket (emprendimiento familiar), realizando control de mercadería, carga de datos en Excel, contacto con proveedores y atención al público. El resto del tiempo trabajé en plataformas de movilidad en Rosario, organizando mi actividad de forma autónoma y manteniendo trato con clientes. En paralelo, continúo formándome en herramientas administrativas.</p>
+                        <h3>Chofer y Atención al Público</h3>  
+                        <p class="fecha-experiencia">Operativo | Oct 2024 - Actualidad</p>
+                        <p>Actividad independiente como conductor mediante aplicaciones, organizando jornadas y trato con clientes. Además, colaboro en un minimarket (emprendimiento familiar), realizando control de mercadería, carga de datos en Excel, contacto con proveedores y atención al público.</p>
                     </div>
                 </div>
 
@@ -428,6 +478,37 @@
 
             </div>
         </section>
+        <section class="seccion" style="background-color: #F8FAFC;">
+            <h2 class="titulo-seccion">Herramientas Desarrolladas</h2>
+            
+            <div class="proyectos-grid">
+                
+                <a href="https://gonzaloleiba.github.io/comparador-cotizaciones/" target="_blank" class="tarjeta-proyecto">
+                    <i class="fas fa-search-dollar"></i>
+                    <h4>Comparador de Cotizaciones</h4>
+                    <span class="link-texto">Abrir herramienta <i class="fas fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://gonzaloleiba.github.io/procesador-facturas/" target="_blank" class="tarjeta-proyecto">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    <h4>Procesador de Facturas</h4>
+                    <span class="link-texto">Abrir herramienta <i class="fas fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://gonzaloleiba.github.io/gestor-tareas/" target="_blank" class="tarjeta-proyecto">
+                    <i class="fas fa-tasks"></i>
+                    <h4>Gestor de Tareas Kanban</h4>
+                    <span class="link-texto">Abrir herramienta <i class="fas fa-arrow-right"></i></span>
+                </a>
+
+                <a href="http://gonzaloleiba.github.io/workflow-tickets/" target="_blank" class="tarjeta-proyecto">
+                    <i class="fas fa-ticket-alt"></i>
+                    <h4>Workflow de Tickets</h4>
+                    <span class="link-texto">Abrir herramienta <i class="fas fa-arrow-right"></i></span>
+                </a>
+
+            </div>
+        </section>
 
         <!-- 4. FORMACIÓN Y ESTUDIOS -->
         <section class="seccion">
@@ -448,7 +529,7 @@
                         </li>
                         <li>
                             <div class="titulo-estudio">Contador Público</div>
-                            <div class="lugar-fecha">UNNOBA | Feb 2007 - Ene 2008</div>
+                            <div class="lugar-fecha">UNOBA | Feb 2007 - Ene 2008</div>
                         </li>
                     </ul>
                 </div>
